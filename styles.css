@@ -52,7 +52,8 @@
   }
 
   .navbar_links:hover {
-      color:rgb(255, 81, 110);
+      /*color:rgb(255, 81, 110);*/
+    color: #0291ff;
       transition: all 0.3s ease;
   }
 
@@ -62,7 +63,7 @@
     background: linear-gradient(to right, #161616, #000000);
     padding: 0px;
     margin: 0px;
-    margin-bottom: -10px;
+    margin-bottom: -110px;
 }
 
 .intro_container {
@@ -154,12 +155,14 @@
 }
 
 .social__icon--link:hover {
-    color:rgb(255, 81, 110);
+    /*color:rgb(255, 81, 110);*/
+    color: #0291ff;
     transition: all 0.3s ease;
 }
 
 .social_icon_big:hover {
-    color:rgb(255, 81, 110);
+    /*color:rgb(255, 81, 110);*/
+    color: #0291ff;
     transition: all 0.3s ease;
 }
 
@@ -175,6 +178,92 @@
 .intro_links {
     
 }
+
+.resume_button {
+  color: white;
+  font-size: 45px;
+  background: linear-gradient(to right, rgb(255, 81, 110), rgb(255, 114, 137));
+  padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  color: white;
+  top: -40px;
+}
+
+.resume_button:hover{
+    background: rgb(255, 81, 110);
+}
+
+.resume_button_text{
+    text-decoration: none;
+    color:white;
+}
+
+.resume_button_text:hover {
+    color: black;
+}
+
+.main__btn {
+    font-size: 1.8rem;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+    background: rgb(255, 81, 110);
+    padding: 20px 60px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 2rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    top: -110px;
+  }
+  
+  
+  .main__btn a {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .main__btn:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #0291ff;
+    transition: all 0.35s;
+    border-radius: 4px;
+  }
+  
+  .main__btn:hover {
+    color: #fff;
+  }
+  
+  .main__btn:hover:after {
+    width: 100%;
+  }
+  
+  .main__img--container {
+    text-align: center;
+  }
+  
+  .main__img--card {
+    margin: 10px;
+    height: 500px;
+    width: 500px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+  }
 
 /* Skills Section */
 
@@ -244,7 +333,7 @@
     height: 90%;
     text-align: center;
     color: white;
-    margin-top: 0px;
+    margin-top: -60px;
     padding-bottom: 50px;
 }
 
@@ -287,6 +376,7 @@
     text-align: center;
     margin: 0px;
     min-width: 150px;
+    margin-top: -60px;
     /*
     display: flex;
     flex-direction: row;
