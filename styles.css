@@ -2,6 +2,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     background-color: linear-gradient(to right, #161616, #000000);
+    font-family:sans-serif;
 }
 
 .social_links {
@@ -185,4 +186,23 @@ footer {
 
 .email:hover {
     color: rgb(255, 81, 110);
+}
+
+/* .card-img-top {
+    width: 50%;
+    height: 15vw;
+    object-fit: cover;
+}*/
+
+.card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    color:white;
+    background-color: #202020;
+    width: 35%;
+}
+
+.card-title {
+    text-align: center;
 }
