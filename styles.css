@@ -8,7 +8,11 @@
 body {
     /* background: linear-gradient(to right, #161616, #000000); */
     /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%); */
-    background: radial-gradient(circle, rgba(22,22,22,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%);
+    /* background: radial-gradient(circle, rgba(22,22,22,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%); */
+    /* background: #232526;  fallback for old browsers */
+    background: #141616;
+
+
     color: white;
 }
 
@@ -94,9 +98,20 @@ footer {
     width: 35%; */
     color:white;
     background-color: #202020;
+    /* font-size: 25px; */
+    font-size: 1.25vw;
 }
 
 .card-title {
     text-align: center;
     text-decoration-style:solid;
+    /* font-size: 35px; */
+    font-size: 2.5vw;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card-img {
+    /* opacity: 50%; */
+    filter: brightness(35%);
 }
