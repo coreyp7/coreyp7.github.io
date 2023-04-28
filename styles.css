@@ -88,14 +88,15 @@ footer {
 /* Project bootstrap cards */
 
 .card {
-    margin: 0 auto;
+    /* margin: 0 auto;
     float: none;
     margin-bottom: 10px;
+    width: 35%; */
     color:white;
     background-color: #202020;
-    width: 35%;
 }
 
 .card-title {
     text-align: center;
+    text-decoration-style:solid;
 }
