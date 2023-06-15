@@ -129,4 +129,10 @@ footer {
 .card-img {
     /* opacity: 50%; */
     filter: brightness(35%);
+    width: 100%;
+    /* height: 25vw; */
+}
+
+.bottom-buffer {
+    margin-bottom: 20px;
 }
