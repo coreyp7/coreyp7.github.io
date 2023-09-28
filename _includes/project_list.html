@@ -1,0 +1,16 @@
+{% if site.posts.size > 0 %}
+  <ul>
+    {% for post in site.posts %}
+      {% if post.category == 'project' %}
+      <li>
+        <a class="post_link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <i>(
+          {{ post.date | date: site.theme_config.date_format }}
+        )
+        </i>
+        : {{ post.description }}
+      </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endif %}

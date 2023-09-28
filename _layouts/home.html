@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<header>
+<!-- {% if site.theme_config.show_navbar == true %}
+  {% include horizontal_list.html collection=site.data.home.navbar_entries %}
+  <hr class="separator" />
+{% endif %} -->
+
+  <!-- <h1>{{ site.title }}</h1>
+  {% if site.theme_config.show_description == true %}
+    <p>{{ site.description }}</p>
+  {% endif %} -->
+</header>
+
+<div class="intro" id="intro">
+  <div class="intro_header_container">
+    <img class="intro_pic" src="/assets/me.JPG" alt="picture of me">
+    <div class="intro_right_vertical_list">
+      <h1 class="intro_name">Corey Pierce</h1>
+      <!-- Do this when you feel like it.
+      {% if site.theme_config.show_description == true %}
+        <h4>{{ site.description }}</h4>
+      {% endif %} 
+      -->
+      <!-- <br><br> -->
+      <div class="intro_links">
+        <a href="https://www.linkedin.com/in/corey-pierce-02bb9219a/" target="_blank" class="social__icon--link"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/coreyp7" target="_blank" class="social__icon--link"><i
+            class="fab fa-github"></i></a>
+        <a href="https://www.youtube.com/@CoreWii/" target="_blank" class="social__icon--link"><i
+            class="fa fa-youtube-play"></i></a>
+        <a href="mailto:coreypierce11@gmail.com" target="_blank" class="social__icon--link"><i
+            class="fa fa-envelope"></i></a>
+        <!-- PUT WHEN YOU HAVE YOUR RESUME. OR PUT IT ELSEWHERE.
+                  <a href="" target="_blank" class="social__icon--link"><i 
+                  class="fa fa-file" aria-hidden="true"></i></a> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h3> Hello. I'm a Software Engineer. </h3>
+
+<br>
+
+<!-- <h4 style="text-align: center;"> In my free time, I work on new projects and look into new things. </h4> -->
+<h4 style="text-align: center;">Here you can find whatever I've been working on, and whatever else you can find. </h4>
+
+
+<!-- {{ content }} -->
+
+{% if site.theme_config.show_projects == true %}
+  <br>
+  <hr class="separator" />
+  <h3> Here's some recent projects I've been doing. </h3>
+  <hr class="separator" />
+  <br>
+  {% include card_list.html collection=site.data.home.project_entries %}
+{% endif %}
+
+<!-- {% if site.theme_config.show_misc_list == true %}
+  <h2>{{ site.theme_config.home.title_misc_list }}</h2>
+  {% include vertical_list.html collection=site.data.home.misc_entries %}
+{% endif %}
+
+{% if site.theme_config.show_blog == true %}
+  <h2>{{ site.theme_config.home.title_blog }}</h2>
+  {% include post_list.html %}
+{% endif %}
+
+{% if site.theme_config.show_old_projects == true %}
+  <h2>{{ site.theme_config.home.title_old_projects }}</h2>
+  {% include card_list.html collection=site.data.home.old_project_entries %}
+{% endif %} -->
+
+
+<!-- {% if site.theme_config.show_footer == true %}
+  <footer>
+    <div class="dashed"></div>
+    {% include horizontal_list.html collection=site.data.home.footer_entries %}
+  </footer>
+{% endif %} -->

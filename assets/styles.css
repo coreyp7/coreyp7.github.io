@@ -1,8 +1,7 @@
-/* Generic/general stuff */
+
 * {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family:sans-serif;
+    justify-content: center;
+    font-family: 'Lato';
 }
 
 body {
@@ -11,27 +10,28 @@ body {
     /* background: radial-gradient(circle, rgba(22,22,22,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%); */
     /* background: #232526;  fallback for old browsers */
     background: #141616;
-
-
     color: white;
+    overflow:auto;
 }
 
 .separator {
     color: white;
 }
 
-footer {
+/* footer {
     color:white;
     text-align:center;
-}
+} */
 
 /* Intro section (picture of me, name, icons, brief introduction) */
-
 
 .intro {
     padding: 0px;
     margin: 0px;
-    margin-bottom: -110px;
+    /* margin-bottom: -110px; */
+    /* margin-top: -80px; This is bad but works for now i think. */
+    margin-bottom: -35px;
+    margin-top: -60px;
 }
 
 .intro_header_container {
@@ -53,6 +53,8 @@ footer {
     border-width: 0px;
     border-color: grey;
     margin-right: 25px;
+    margin-left: -12px;
+    margin-top: -15px;
 }
 
 .intro_right_vertical_list {
@@ -67,7 +69,7 @@ footer {
     /* color:rgb(255, 81, 110); */
     position: relative;
     font-weight: bolder;
-    /* padding-bottom: 15px; */
+    padding-bottom: 55px;
 }
 
 .intro_links {
@@ -78,7 +80,7 @@ footer {
     color: #fff;
     font-size: 28px;
     padding: 10px;
-    top: -30px;
+    top: -60px;
     position: relative;
 }
 
@@ -107,32 +109,68 @@ footer {
 /* Project bootstrap cards */
 
 .card {
-    /* margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
-    width: 35%; */
     color:white;
     background-color: #202020;
-    /* font-size: 25px; */
-    font-size: 1.25vw;
+    /* font-size: 1.25vw; */
 }
 
 .card-title {
     text-align: center;
     text-decoration-style:solid;
-    /* font-size: 35px; */
-    font-size: 2.5vw;
+    /* font-size: 2.5vw; */
     font-weight: bold;
     text-decoration: underline;
 }
 
 .card-img {
-    /* opacity: 50%; */
     filter: brightness(35%);
     width: 100%;
-    /* height: 25vw; */
+}
+
+.card-text {
+    color: white;
+}
+
+.navbar_item {
+    color:white;
+    font-size: 25px;
+    padding: 15px;
+}
+
+.horizontal-list {
+    justify-content: center;
+    
+}
+
+.navbar_item:hover {
+    color:rgb(255, 81, 110);
+}
+
+.projects_header {
+    text-align: center;
 }
 
 .bottom-buffer {
     margin-bottom: 20px;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+    text-align: left;
+    font-weight: normal;
+}
+
+/* blog list page */
+.post_link {
+    text-decoration: none;
+    color: #2cc3ff;
+    font-size: 25px;
+}
+
+.post_link:hover {
+    text-decoration: none;
+    color: rgb(255, 81, 110);
 }
