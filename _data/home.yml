@@ -11,21 +11,21 @@ navbar_entries:
 project_entries:
   - title: QuadTree Demo
     # url: overview-post
-    desc: This is an example project, configured in _data/home.yml
+    desc: QuadTree implementation I created for use in future projects, specifically for collision detection.
     img: /assets/images/projects/quadtree.gif
     github_link: https://github.com/coreyp7/quadtree-demo
     youtube_link: https://youtu.be/rHf6aKyx8l8?si=TjS2w0bclF3PaNHo
 
   - title: My Own Tetris
     # url: overview-post
-    desc: Projects are shown in card layout
+    desc: Everybody makes Tetris; this one's mine.
     img: /assets/images/projects/tetris_preview.png
     github_link: https://github.com/coreyp7/sirtet
     youtube_link: https://youtu.be/fWdjqzIpYWk?si=FIEVvbYCKGMa_3ns
 
   - title: Warehouse Escape
     # url: overview-post
-    desc: You can control visibility from _config.yml file\
+    desc: A video game about a shipping box trying to escape its warehouse as fast as possible.
     img: /assets/images/projects/warehouse_preview.png
     github_link: https://github.com/coreyp7/Warehouse-Escape
     youtube_link: https://youtu.be/NnFjYvj1s3Q?si=hkI76_go111VIarD
