@@ -169,9 +169,27 @@ h4 {
     text-decoration: none;
     color: #2cc3ff;
     font-size: 25px;
+    vertical-align: auto;
+}
+
+.post_date {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    font-style: italic;
+    vertical-align: auto;
 }
 
 .post_link:hover {
     text-decoration: none;
     color: rgb(255, 81, 110);
+}
+
+/* Projects list page */
+.project_list{
+    list-style-type: none;
+}
+
+.project_list_li {
+    margin: 10px 0;
 }
