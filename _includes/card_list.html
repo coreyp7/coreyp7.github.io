@@ -1,6 +1,17 @@
+
+<!-- 
+  This is the list of bootstrap cards for showing off projects.
+  As of now, this is only on the home page, although I think it
+  could be improved to be included in the projects list too.
+
+  Each project is obtained from the home.yml.
+
+  In the future this should only show the first 3 we automatically
+  load from the posts directory which are labeled as type: project.
+-->
+
 <ul class="horizontal-list">
   {% for item in include.collection %}
-
       <div class="row justify-content-md-center bottom-buffer">
         <div class="col-md-auto">
           <div class="card mb-3 text-center bg-dark text-white p-0" style="width: 35rem;">
