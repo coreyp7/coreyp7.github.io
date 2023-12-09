@@ -2,12 +2,27 @@
   <ul>
     {% for post in site.posts %}
       {% if post.category == 'blog' %}
-      <li>
+      <!-- <li>
         <a class="post_link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <i>(
           {{ post.date | date: site.theme_config.date_format }}
         )
         </i>
+      </li> -->
+      <li class="project_list_li">
+        <!-- <a class="post_date">
+          {{ post.date | date: site.theme_config.date_format }}
+        </a> -->
+        <a class="post_link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <!-- <i>(
+          {{ post.date | date: site.theme_config.date_format }}
+        )
+        </i> -->
+        <br>
+        <a class="post_date">
+          ({{ post.date | date: site.theme_config.date_format }})
+        </a> ~ 
+        {{ post.description }} 
       </li>
       {% endif %}
     {% endfor %}
