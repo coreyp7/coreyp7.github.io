@@ -166,8 +166,8 @@ h4 {
 
 /* blog list page */
 .post_link {
-    text-decoration: none;
-    color: #2cc3ff;
+    text-decoration: underline;
+    color: #5bd0ff;
     font-size: 25px;
     vertical-align: auto;
 }
@@ -181,7 +181,7 @@ h4 {
 }
 
 .post_link:hover {
-    text-decoration: none;
+    text-decoration: underline;
     color: rgb(255, 81, 110);
 }
 
