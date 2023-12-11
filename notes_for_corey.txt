@@ -2,6 +2,11 @@ Hey,
 
 This is a text file to give you a rundown on the shitty layout of this project so that you don't have to figure it out again when you wanna add stuff.
 
+-- Jekyll commands --
+bundle install (looks at gemfile and installs all dependencies into repository)
+bundle exec jekyll serve (look at static pages, files, and combines into one website to run)
+
+
 -- HTML Page Editing --
 Home/Projects/Blog pages are in the root directory for some reason.
 

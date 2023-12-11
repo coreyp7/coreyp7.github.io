@@ -77,7 +77,7 @@ def fun():
 print(fun()) # prints 6, no error
 ```
 
-[**``nonlocal``**]([https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement](https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement)) specifies the identifier item "*to refer to previously bound variable(s) in the nearest enclosing scope excluding globals*". In this case, the closest definition of item found is 3.
+[**``nonlocal``**](https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement) specifies the identifier item "*to refer to previously bound variable(s) in the nearest enclosing scope excluding globals*". In this case, the closest definition of item found is 3.
 
 Interestingly (as specified in the documentation linked above), ``nonlocal`` looks for bound variables excluding globals. So this:
 
