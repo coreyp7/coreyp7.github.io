@@ -32,6 +32,9 @@
   {% endif %}
 
   {%- include custom_head.html -%}
+  <style>
+
+  </style>
 </head>
 
 <header>
@@ -39,26 +42,45 @@
   {% if site.theme_config.show_navbar == true %}
   <!-- {% include horizontal_list.html collection=site.data.home.navbar_entries %} -->
 
-  <ul class="horizontal-list">
-      <li>
-        <a href="{{ "/" | relative_url }}" class="navbar_item">
-          Home
-        </a>
-      </li>
-      <li>
-        <a href="/projects" class="navbar_item">
-          Projects
-        </a>
-      </li>
-      <li>
-        <a href="/blog" class="navbar_item">
-          Blog
-        </a>
-      </li>
-  </ul>
+  <nav>
+    <ul>
+    <li class="vertical_navbar_li logo_name"> Corey Pierce </li>
+      
+        <li class="vertical_navbar_li">
+          <a href="{{ "/" | relative_url }}" class="nav_link">
+           Home
+          </a>
+        </li>
+        <li class="vertical_navbar_li">
+          <a href="/projects" class="nav_link">
+            Projects
+          </a>
+        </li>
+      <li class="vertical_navbar_li">
+          <a href="/blog" class="nav_link">
+            Blog
+          </a>
+        </li>
+        <hr style="width: 100px;">
+      <li class="vertical_navbar_li">
+          <a href="https://www.linkedin.com/in/corey-pierce-02bb9219a/" class="nav_link">
+            Linkedin
+          </a>
+        </li>
+      <li class="vertical_navbar_li">
+          <a href="https://github.com/coreyp7" class="nav_link">
+            Github
+          </a>
+        </li>
+      <li class="vertical_navbar_li">
+          <a href="https://www.youtube.com/@CoreWii" class="nav_link">
+            Youtube
+          </a>
+        </li>
+    </ul>
+  </nav>
 
   <!-- <a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a> -->
 
-  <hr class="separator" />
   {% endif %}
 </header>

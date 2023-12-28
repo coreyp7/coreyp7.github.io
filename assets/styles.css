@@ -1,7 +1,8 @@
 
 * {
     justify-content: center;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Montserrat';
 }
 
 body {
@@ -193,3 +194,64 @@ h4 {
 .project_list_li {
     margin: 10px 0;
 }
+
+/* stuff for vertical sidebar */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+  font-size: 22px;
+  }
+
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    padding-left: 150px;
+    text-wrap: wrap;
+  }
+  .column2 {
+    float: left;
+    width: 75%;
+    padding: 10px;
+    text-wrap: wrap;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  nav {
+    position: fixed;
+    width: 220px;
+  }
+
+  li {
+    margin: 5px 0;
+  }
+
+  .vertical_navbar_li {
+    display: block;
+  }
+
+  .logo_name {
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .nav_link {
+    text-decoration: None;
+    color: white;
+  }
+
+  .nav_link:hover {
+    color: rgb(255, 81, 110);
+  }
