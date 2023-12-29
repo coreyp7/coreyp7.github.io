@@ -1,4 +1,3 @@
-
 * {
     justify-content: center;
     /* font-family: 'Lato', sans-serif; */
@@ -11,118 +10,97 @@ body {
     /* background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%); */
     /* background: radial-gradient(circle, rgba(22,22,22,1) 0%, rgba(0,0,0,1) 86%, rgba(150,48,65,1) 100%, rgba(255,81,110,1) 100%); */
     /* background: #232526;  fallback for old browsers */
-    
+
     background: #141616;
     color: white;
-    overflow:auto;
+    overflow: auto;
 }
 
-.separator {
-    color: white;
-}
-
-/* footer {
-    color:white;
-    text-align:center;
-} */
-
-/* Intro section (picture of me, name, icons, brief introduction) */
+/* Index */
 .index_styling {
     max-width: 300px;
 }
 
-.intro {
-    padding: 0px;
-    margin: 0px;
-    /* margin-bottom: -110px; */
-    /* margin-top: -80px; This is bad but works for now i think. */
-    margin-bottom: -35px;
-    margin-top: -60px;
-}
-
-.intro_header_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 30px;
-}
-
-.intro_pic {
+.index_pic {
     border-radius: 35%;
     width: 150px;
-    float:center;
-    border-style: solid;
-    border-width: 0px;
-    border-color: grey;
-    /* margin-right: 25px;
-    margin-left: -12px;
-    margin-top: -15px; */
 }
 
-.intro_right_vertical_list {
-    padding: 15px;
-    margin-top: 15px;
+/* blog post/project list page */
+.post_link {
+    text-decoration: underline;
+    color: #5bd0ff;
+    font-size: 25px;
+    vertical-align: auto;
 }
 
-.intro_name {
-    font-size: 60px;
-    padding-bottom: 0px;
-    /*bottom: -25px;*/
-    /* color:rgb(255, 81, 110); */
-    position: relative;
-    font-weight: bolder;
-    padding-bottom: 55px;
-}
-
-.intro_links {
-    
-}
-
-.social__icon--link {
-    color: #fff;
-    font-size: 28px;
-    padding: 10px;
-    top: -60px;
-    position: relative;
-}
-
-.social__icon--link:hover {
-    /*color:rgb(255, 81, 110);*/
-    color: #2cc3ff;
+.post_link:hover {
+    text-decoration: underline;
     color: rgb(255, 81, 110);
-    transition: all 0.3s ease;
 }
 
-.resume_link {
-    color: rgb(255, 81, 110);
-    font-size: 24px;
+.post_date {
     text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
     font-style: italic;
-    position: relative;
-    text-align: center;
+    vertical-align: auto;
 }
 
-.resume_link:hover {
-    /* color: rgb(255, 81, 110); */
-    color: #fff;
-    transition: all 0.3s ease;
+.project_list {
+    list-style-type: none;
 }
 
-/* Project bootstrap cards */
+.project_list_li {
+    margin: 10px 0;
+}
+
+/* Vertical navbar shit. */
+nav {
+    display: absolute;
+    float: left;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.vertical_navbar_li {
+    list-style: none;
+}
+
+/* "logo" meaning my full name above the navbar. */
+.logo_name {
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.nav_link {
+    text-decoration: None;
+    color: white;
+}
+
+.nav_link:hover {
+    color: rgb(255, 81, 110);
+}
+
+/* ******************************************************* */
+/* LEFTOVER SHIT BELOW, IGNORE */
+/* ******************************************************* */
+
+/* Project bootstrap cards leftover. */
 
 .card {
-    color:white;
+    color: white;
     background-color: #202020;
     /* font-size: 1.25vw; */
 }
 
 .card-title {
     text-align: center;
-    text-decoration-style:solid;
+    text-decoration-style: solid;
     /* font-size: 2.5vw; */
     font-weight: bold;
     text-decoration: underline;
@@ -136,122 +114,3 @@ body {
 .card-text {
     color: white;
 }
-
-.navbar_item {
-    color:white;
-    font-size: 25px;
-    padding: 15px;
-}
-
-.horizontal-list {
-    justify-content: center;
-    
-}
-
-.navbar_item:hover {
-    color:rgb(255, 81, 110);
-}
-
-.projects_header {
-    text-align: center;
-}
-
-.bottom-buffer {
-    margin-bottom: 20px;
-}
-
-h3 {
-    text-align: center;
-}
-
-h4 {
-    text-align: left;
-    font-weight: normal;
-}
-
-/* blog list page */
-.post_link {
-    text-decoration: underline;
-    color: #5bd0ff;
-    font-size: 25px;
-    vertical-align: auto;
-}
-
-.post_date {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 15px;
-    font-style: italic;
-    vertical-align: auto;
-}
-
-.post_link:hover {
-    text-decoration: underline;
-    color: rgb(255, 81, 110);
-}
-
-/* Projects list page */
-.project_list{
-    list-style-type: none;
-}
-
-.project_list_li {
-    margin: 10px 0;
-}
-
-/* stuff for vertical sidebar */
-
-  
-  /* Create two equal columns that floats next to each other */
-  /* .column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    padding-left: 150px;
-    text-wrap: wrap;
-  }
-  .column2 {
-    float: left;
-    width: 75%;
-    padding: 10px;
-    text-wrap: wrap;
-  } */
-
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  nav {
-    display: absolute;
-    float: left;
-    /* width: 220px; */
-    /* width: 15%; */
-    /* display: block; */
-  }
-
-  li {
-    margin: 5px 0;
-  }
-
-  .vertical_navbar_li {
-    list-style: none;
-  }
-
-  .logo_name {
-    margin-bottom: 15px;
-    letter-spacing: -1px;
-    font-weight: bold;
-    font-size: 30px;
-  }
-
-  .nav_link {
-    text-decoration: None;
-    color: white;
-  }
-
-  .nav_link:hover {
-    color: rgb(255, 81, 110);
-  }
