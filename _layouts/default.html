@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}" class="html" data-theme="{{ site.theme_config.appearance | default: "auto" }}">
-        {%- include head.html -%}
+        
+<div style="display:relative;">
+
+{%- include head.html -%}
   <body>
     <main class="page-content" aria-label="Content">
       <div class="w">
@@ -8,4 +11,6 @@
       </div>
     </main>
   </body>
+
+</div>
 </html>

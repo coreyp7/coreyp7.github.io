@@ -3,6 +3,7 @@
     justify-content: center;
     /* font-family: 'Lato', sans-serif; */
     font-family: 'Montserrat';
+    font-size: 22px;
 }
 
 body {
@@ -200,14 +201,7 @@ h4 {
 
 /* stuff for vertical sidebar */
 
-* {
-    box-sizing: border-box;
-  }
   
-  body {
-  font-size: 22px;
-  }
-
   /* Create two equal columns that floats next to each other */
   /* .column {
     float: left;
@@ -231,8 +225,11 @@ h4 {
   }
 
   nav {
-    position: fixed;
-    width: 220px;
+    display: absolute;
+    float: left;
+    /* width: 220px; */
+    /* width: 15%; */
+    /* display: block; */
   }
 
   li {
@@ -240,7 +237,7 @@ h4 {
   }
 
   .vertical_navbar_li {
-    display: block;
+    list-style: none;
   }
 
   .logo_name {
