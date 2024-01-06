@@ -4,7 +4,9 @@ category: project
 description: A small demo of an implementation of SAT collision of any convex polygons.
 ---
 
-Right now I don't have a video of this.
+### [video link](https://youtu.be/TX0AjeiljTw?si=xjHYhMu6p5JKCcFl)
+
+[ ![preview3](/assets/images/projects/sat_preview.gif){:class="img-responsive"} ](https://youtu.be/TX0AjeiljTw?si=xjHYhMu6p5JKCcFl)
 
 I wanted to implement more sophistocated collision detection after just resorting to AABB stuff in previous projects up until this point. SAT is a common one to learn for convex polygons, and is very visually satisfying to get working.
 
