@@ -69,10 +69,12 @@ a:hover {
     margin: 10px 0;
 }
 
-/* Vertical navbar shit. */
+/* Vertical navbar. */
 nav {
     display: absolute;
     float: left;
+    margin-bottom: -5000px;
+	/* overflow: hidden; */
 }
 
 li {
@@ -100,15 +102,25 @@ li {
     color: rgb(255, 81, 110);
 }
 
+.page-content {
+	padding-left: 65px;
+}
+
+
 /* 
  * When window is small enough, just have navbar take up whole
  * width of window so that the site contents go below navbar. 
  */
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 600px) {
     nav {
         display: absolute;
         float: left;
         width: 100%;
+        margin-bottom: 0px;
+    }
+
+    .page-content {
+        padding-left: 0px;
     }
 }
 
