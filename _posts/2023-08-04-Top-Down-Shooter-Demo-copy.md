@@ -1,6 +1,6 @@
 ---
 layout: default
-category: project
+category: blog
 description: Demo for a top down bullet hell.
 ---
 

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 category: blog
 description: Some explanation and examples of nonlocal keyword.
 ---
@@ -10,7 +10,7 @@ description: Some explanation and examples of nonlocal keyword.
 
 In any other modern languages (which follow lexical scope structure), the example below intuitively works.
 
-```
+{% highlight python %}
 def fun():
 	item = 3
 	def double():
@@ -20,7 +20,8 @@ def fun():
 	return double()
 
 fun()
-```
+{% endhighlight %}
+
 
 But it doesn’t, it results in an error: ``UnboundLocalError: local variable ‘item’ referenced before assignment.``
 
@@ -30,7 +31,7 @@ This doesn’t make sense to me, the variable ``item`` should clearly be accessi
 
 You can change a variable by declaring that variable in your scope as **``nonlocal``** to modify it.
 
-```
+{% highlight python %}
 def fun():
 	item = 3
 	def double():
@@ -41,7 +42,7 @@ def fun():
 	return double()
 
 print(fun()) # prints 6, no error
-```
+{% endhighlight %}
 
 *(For other hacky ways of solving the situation and more information on this, read more below).*
 
@@ -64,7 +65,7 @@ This is where it gets less intuitive for me:
 
 This is what the ``nonlocal`` keyword is for. Here's the example from earlier:
 
-```
+{% highlight python %}
 def fun():
 	item = 3
 	def double():
@@ -75,13 +76,13 @@ def fun():
 	return double()
 
 print(fun()) # prints 6, no error
-```
+{% endhighlight %}
 
 [**``nonlocal``**](https://docs.python.org/3/reference/simple_stmts.html#the-nonlocal-statement) specifies the identifier item "*to refer to previously bound variable(s) in the nearest enclosing scope excluding globals*". In this case, the closest definition of item found is 3.
 
 Interestingly (as specified in the documentation linked above), ``nonlocal`` looks for bound variables excluding globals. So this:
 
-```
+{% highlight python %}
 item = 7
 def fun():
 	def double():
@@ -92,13 +93,13 @@ def fun():
 
 fun()
 print(item)
-```
+{% endhighlight %}
 
 results in a ``Syntax error: no binding for nonlocal 'item' found``.
 
 So, you'd have to utilize the ``global`` keyword for this situation.
 
-```
+{% highlight python %}
 item = 7
 def fun():
 	def double():
@@ -109,11 +110,11 @@ def fun():
 	return double()
 	
 print(fun()) # prints 14
-```
+{% endhighlight %}
 
 ### Cursed Solutions: Warning
 Remember in the annoying rules earlier where its mentioned that you can access outer variables, just not modify them?
-```
+{% highlight python %}
 item = 7
 def fun():
 	def dummy():
@@ -126,13 +127,13 @@ print(fun())
 # output will be:
 # 7
 # 7
-```
+{% endhighlight %}
 
 This is valid. Problems only arise when reassigning those variables. This seems to stem from the lack of a variable declaration keyword.
 
 But because we have access to a variable, we are able to mutate it.
 
-```
+{% highlight python %}
 class Item:
 	def __init__(self, value):
 		self.value = value
@@ -145,11 +146,11 @@ def fun():
 	
 fun()
 print(item.value) # 7
-```
+{% endhighlight %}
 
 See what I mean? You can do the same with a list.
 
-```
+{% highlight python %}
 item = [4]
 print(item[0]) # 4
 
@@ -158,7 +159,7 @@ def fun():
 
 fun()
 print(item[0]) # 7
-```
+{% endhighlight %}
 
 *(I saw someone use this in their leetcode solution instead of ``nonlocal`` and I was appalled.)*
 

@@ -4,16 +4,20 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <style>
+      
       body {
         max-width: 900px;
         margin:auto;
         padding: 30px;
+        /* fix the screen shifting to the left when scrollbar shows up */
+        overflow-y: scroll;
       }
     </style>
   </head>
   <div>
-    <a href="../index.html">Home</a>
-    <a href="../posts.html">Posts</a>
+    <a href="{{ "/" | relative_url }}" class="nav_link">Home</a>
+    <a href="{{ "/projects" | relative_url }}" class="nav_link">Projects</a>
+    <a href="{{ "/posts" | relative_url }}" class="nav_link">Posts</a>
   </div>
   <body>
     {{ content }}

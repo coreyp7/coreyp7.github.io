@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 category: project
 description: A small demo of an implementation of SAT collision of any convex polygons.
 ---

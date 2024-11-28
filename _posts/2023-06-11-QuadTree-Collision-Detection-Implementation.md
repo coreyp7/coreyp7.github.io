@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default
 category: project
 description: QuadTree implementation I created for use in future projects, specifically for collision detection.
 image_name: quadtree.gif

@@ -1,0 +1,14 @@
+Hey, I know you'll forget this stuff (even though its way simpler now). 
+So some quick notes.
+
+for testing:
+    bundle exec jekyll serve
+
+Add new posts in _posts dir, make sure the date formatting matches.
+Additionally, mark 'category' in the file depending on type of thing it is:
+- 'project'
+- 'blog' for normal posts
+
+The navbar is at the top of '_layouts/default.html'.
+
+The 'post.html' layout actually inherits from 'default.html' to get the navbar.
