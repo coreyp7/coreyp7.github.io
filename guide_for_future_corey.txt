@@ -12,3 +12,5 @@ Additionally, mark 'category' in the file depending on type of thing it is:
 The navbar is at the top of '_layouts/default.html'.
 
 The 'post.html' layout actually inherits from 'default.html' to get the navbar.
+
+If you want to update the resume link, its in the '_config.yml'.
