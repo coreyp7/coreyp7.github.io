@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 category: blog
 description: Some explanation and examples of nonlocal keyword.
 ---

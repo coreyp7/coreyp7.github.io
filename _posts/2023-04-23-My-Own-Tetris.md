@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 category: project
 description: Everybody makes Tetris; this one's mine.
 image_name: tetris_preview.png
