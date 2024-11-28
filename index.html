@@ -1,0 +1,36 @@
+---
+layout: default
+title: Home
+---
+<html>
+  <h3>
+    Hey there
+  </h3>
+
+  <p>I'm Corey Pierce. I'm a Software Engineer currently living in Philadelphia.
+    In my free time I typically study how game engines are made, and learning how
+    conventional tools are implemented.</p>
+<p>
+    Feel free to contact me at coreypierce11@gmail.com with any questions or discussion
+    around anything on here. You can also find me on LinkedIn (link here).
+</p>
+<p>
+    If you want to checkout my stuff, you can checkout my Github profile (link here).
+</p>
+<p>
+    If you want to hire me, here's my latest resume (link here).
+  </p>
+
+  <body>
+
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+            {{ post.excerpt }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+  </body>
+</html>
