@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
     <style>
       
@@ -13,13 +14,42 @@
         /* fix the screen shifting to the left when scrollbar shows up */
         overflow-y: scroll;
       }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        column-gap: 5%;
+      }
+
+      /*
+      .nav_link {
+        text-decoration: none;
+        color: rgb(197, 2, 145);
+      }
+
+      .nav_link:hover {
+        text-decoration: underline;
+      }
+      */
+
+      a {
+        text-decoration: none;
+        color: rgb(197, 2, 145);
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
     </style>
   </head>
-  <div>
+  <nav>
     <a href="{{ "/" | relative_url }}" class="nav_link">Home</a>
+    ~
     <a href="{{ "/projects" | relative_url }}" class="nav_link">Projects</a>
+    ~
     <a href="{{ "/posts" | relative_url }}" class="nav_link">Posts</a>
-  </div>
+  </nav>
   <body>
     {{ content }}
   </body>

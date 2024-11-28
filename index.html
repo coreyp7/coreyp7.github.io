@@ -7,16 +7,23 @@ title: Home
     display: flex;
     justify-content: space-evenly;
     column-gap: 15px;
+    overflow-wrap: break-word;
   }
 
   .picture {
     width:250px;
     height:250px;
+    width:27%;
+    height:27%;
+    align-self: baseline;
   }
 
-  .info_text {
+  @media only screen and (max-width: 750px) {
+    .picture {
+        display: none;
+    }
+}
 
-  }
 </style>
 
   <h3>
