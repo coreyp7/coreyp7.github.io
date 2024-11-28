@@ -2,7 +2,6 @@
 layout: default
 title: Home
 ---
-<html>
   <h3>
     Hey there
   </h3>
@@ -20,17 +19,3 @@ title: Home
 <p>
     If you want to hire me, here's my latest resume (link here).
   </p>
-
-  <body>
-
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-            {{ post.excerpt }}
-        </li>
-        {% endfor %}
-    </ul>
-    
-  </body>
-</html>

@@ -1,0 +1,21 @@
+---
+layout: default
+title: Posts
+---
+<html>
+  <h3>
+    Here's all the shit i gotta say
+  </h3>
+
+  <body>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <h2><a href="{{ post.url }}">{{ post.title }}</a> ({{ post.date | date: "%Y-%m-%d" }})</h2>
+            {{ post.description }}
+        </li>
+        {% endfor %}
+    </ul>
+    
+  </body>
+</html>
