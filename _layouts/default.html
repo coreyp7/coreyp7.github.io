@@ -21,17 +21,6 @@
         column-gap: 5%;
       }
 
-      /*
-      .nav_link {
-        text-decoration: none;
-        color: rgb(197, 2, 145);
-      }
-
-      .nav_link:hover {
-        text-decoration: underline;
-      }
-      */
-
       a {
         text-decoration: none;
         color: rgb(197, 2, 145);
@@ -41,6 +30,20 @@
         text-decoration: underline;
       }
 
+      h3 {
+        justify-content: center;
+      }
+
+      /* Stuff for posts/projects. Can put all this into css file eventually. */
+      .post_list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .post_list_item {
+
+      }
+
     </style>
   </head>
   <nav>
@@ -48,7 +51,7 @@
     ~
     <a href="{{ "/projects" | relative_url }}" class="nav_link">Projects</a>
     ~
-    <a href="{{ "/posts" | relative_url }}" class="nav_link">Posts</a>
+    <a href="{{ "/posts" | relative_url }}" class="nav_link">Notes</a>
   </nav>
   <body>
     {{ content }}
