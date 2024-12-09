@@ -14,3 +14,6 @@ The navbar is at the top of '_layouts/default.html'.
 The 'post.html' layout actually inherits from 'default.html' to get the navbar.
 
 If you want to update the resume link, its in the '_config.yml'.
+
+Right now there's just css in html files. There's very little so its fine.
+If you want to be a good samaritan then move it out to its own file.
