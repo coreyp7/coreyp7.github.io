@@ -6,7 +6,7 @@ description: A compiler for the 'plank' language. Written to learn Rust.
 
 ### <ins>[github repo](https://github.com/coreyp7/compiler-in-Rust)</ins>
 
-I wrote my first lanugage programming lanugage (compiler) so I could learn Rust. <br>
+I wrote my first programming lanugage (compiler) so I could learn Rust. <br>
 The language is named *plank*.
 If you'd like to use this wonderful language, feel free. 
 ```
