@@ -8,11 +8,10 @@ title: Home
     justify-content: space-evenly;
     column-gap: 15px;
     overflow-wrap: break-word;
+    align-items: center;
   }
 
   .picture {
-    width:250px;
-    height:250px;
     width:27%;
     height:27%;
     align-self: baseline;
@@ -24,7 +23,11 @@ title: Home
     margin-right: 35px;
   }
 
-  @media only screen and (max-width: 750px) {
+  .lately_section {
+    margin-left: 55px;
+  }
+
+  @media only screen and (max-width: 825px) {
     .picture {
         display: none;
     }
@@ -58,14 +61,50 @@ title: Home
       There's also further information of each project under the 'Projects' tab. 
   </p>
 
+    <!--
     <p> Lately, I've been writing 
         <a href="https://github.com/coreyp7/compiler-in-Rust" target="_blank">a compiler in Rust</a> 
         (to learn Rust).
+    -->
 
   <!-- <p>
       If you want to hire me, here's my latest <a href="{{ site.latest-resume }}">resume</a>.
     </p> -->
   </div>
+</div>
+
+<br>
+<br>
+<hr>
+<br>
+
+<div class="lately_section">
+    <p>
+    Lately I've been:
+    <ul>
+        <li>
+            <a href="https://github.com/coreyp7/compiler-in-Rust" target="_blank">
+                writing a compiler (for the first time) in Rust (to learn Rust) 
+            </a>
+        </li>
+    </ul>
+
+    A brief history:
+    <ul>
+        <li>2024-present: Software Engineer ll at JP Morgan & Chase </li>
+        <li>2022-2024: Software Engineer at ASRC Federal </li>
+        <li>2021-2022: Worked as a part-time Associate Software Engineer at ASRC Federal while in my last year of college</li>
+        <li>2018-2022: Attended Rowan University (BS in Computer Science) </li>
+    </ul>
+
+    Notable projects I liked working on:
+    <ul>
+        <li>2025: My own malloc / garbage collector in C</li>
+        <li>2025: Juggling game in SDL3</li>
+        <li>2023: QuadTree data structure (and implementation in demo game) </li>
+        <li>2023: I made tetris for fun in a week (you'll be able to tell)</li>
+    </ul>
+    </p>
 
 </div>
 
