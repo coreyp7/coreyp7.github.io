@@ -2,9 +2,8 @@
 layout: post
 category: project
 description: A compiler for the 'plank' language. Written to learn Rust.
+github-link: https://github.com/coreyp7/compiler-in-Rust
 ---
-
-### <ins>[github repo](https://github.com/coreyp7/compiler-in-Rust)</ins>
 
 I wrote my first programming lanugage (compiler) so I could learn Rust. <br>
 The language is named *plank*.

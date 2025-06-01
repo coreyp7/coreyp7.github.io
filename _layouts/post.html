@@ -2,17 +2,52 @@
 layout: default
 ---
 <style>
-img {
-	border:5px double black;
-}
+    .github_logo {
+        width: 25px;
+        height: 25px;
+    }
 
-img:hover {
-	filter: brightness(50%);
-}
+    .github_logo:hover {
+	    filter: brightness(50%);
+    }
 </style>
 
-<h1> {{ page.title }}</h1>
+<br>
+
+<h1 class="post_page_title"> {{ page.title }}</h1>
+<h2 class="post_page_date"> 
+    {{ page.date | date: "%m/%d/%Y" }} 
+    <!-- Here's a display with a logo that I didn't like as much.
+    <a href="{{ page.github-link }}">
+        <img 
+            src="{{ "/assets/github-mark.png" | relative_url }}" 
+            class="github_logo"
+            alt="github logo"
+        >
+    </a>
+    -->
+    {% if page.github-link != null %}
+        <a href="{{ page.github-link }}">
+            (github)
+        </a>
+    {% endif %}
+</h2>
+
+<!-- 
+Just assume that this means this is a blog post.
+Thus, removing the separator.
+This is sloppy but whatever it works.
+-->
+{% if page.youtube-link != null %}
+    <iframe width="420" height="315" src={{ page.youtube-link }}>
+    </iframe>
+    <br>
+    <br>
+    <hr>
+{% endif %}
 <!--<h1> {{ page.description }}</h1>-->
+
+<br>
 
 <p>
 	{{ content }}

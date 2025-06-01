@@ -3,11 +3,9 @@ layout: post
 category: project
 description: QuadTree implementation I created for use in future projects, specifically for collision detection.
 image_name: quadtree.gif
-github_link: https://github.com/coreyp7/quadtree-demo
-youtube_link: https://youtu.be/rHf6aKyx8l8?si=Tqjj2ZOg1RqyLpz
+github-link: https://github.com/coreyp7/quadtree-demo
+youtube-link: https://www.youtube.com/embed/rHf6aKyx8l8
 ---
-
-[![Here's a link to a video of the demo.](/assets/quadtree.gif)](https://youtu.be/rHf6aKyx8l8 "QuadTree demo video")
 
 My first implementation of a QuadTree. Wanted to learn about spatial data structures for use in game development, so I created a demo of large amounts of collisions occurring utilizing this data structure.
 
