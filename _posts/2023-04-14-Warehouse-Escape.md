@@ -2,7 +2,6 @@
 layout: post
 category: project
 description: A video game about a shipping box trying to escape its warehouse as fast as possible.
-image_name: warehouse_preview.png
 github-link: https://github.com/coreyp7/Warehouse-Escape
 youtube-link: https://www.youtube.com/embed/NnFjYvj1s3Q
 ---
