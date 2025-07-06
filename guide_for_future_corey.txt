@@ -17,3 +17,10 @@ If you want to update the resume link, its in the '_config.yml'.
 
 Right now there's just css in html files. There's very little so its fine.
 If you want to be a good samaritan then move it out to its own file.
+
+Travel pages:
+- Main travel page: /travel.html (shows list of destinations)
+- Individual destination pages: use layout 'destination' in front matter
+- Destination layout: creates photo sections with alternating image/text layout
+- Photos are 50% width, text is 50% width, alternating left/right
+- Add new destinations by creating new .html files with 'destination' layout

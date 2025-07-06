@@ -1,0 +1,157 @@
+---
+layout: default
+---
+<style>
+  .destination-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .destination-header {
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 40px;
+    background: #fafafa;
+  }
+
+  .destination-header h1 {
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .destination-header .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .destination-header .description {
+    color: #555;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .photo-section {
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 0;
+    min-height: 60vh;
+  }
+
+  .photo-section:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .photo-section img {
+    width: 60%;
+    height: 60vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-text {
+    width: 40%;
+    padding: 0;
+    background: white;
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  .photo-text-content {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+    font-weight: 300;
+    padding: 60px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .photo-section {
+      flex-direction: column !important;
+      margin-bottom: 0;
+      min-height: auto;
+    }
+
+    .photo-section img {
+      width: 100%;
+      height: 50vh;
+    }
+
+    .photo-text {
+      width: 100%;
+      padding: 0;
+      min-height: auto;
+    }
+
+    .photo-text-content {
+      padding: 40px 30px;
+    }
+
+    .destination-container {
+      padding: 0;
+    }
+
+    .destination-header {
+      padding: 40px 30px;
+      margin-bottom: 60px;
+    }
+
+    .destination-header h1 {
+      font-size: 2em;
+    }
+  }
+
+
+
+  /* Add some subtle visual interest */
+  .photo-section:nth-child(odd) .photo-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #eee;
+  }
+
+  .photo-section:nth-child(even) .photo-text::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #eee;
+  }
+</style>
+
+<div class="destination-container">
+  <div class="destination-header">
+    <h1>{{ page.destination }}</h1>
+    {% if page.date_visited %}
+      <div class="date">{{ page.date_visited }}</div>
+    {% endif %}
+    {% if page.description %}
+      <div class="description">{{ page.description }}</div>
+    {% endif %}
+  </div>
+
+  {{ content }}
+</div>
