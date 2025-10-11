@@ -1,0 +1,284 @@
+---
+layout: default
+---
+<style>
+  .destination-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .destination-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 60px 40px;
+    background: #fafafa;
+  }
+
+  .destination-header h1 {
+    color: #2a2a2a;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .destination-header .date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .destination-header .description {
+    color: #555;
+    font-size: 16px;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  /* Interactive Photo Canvas */
+  .photo-canvas {
+    min-height: 80vh;
+    position: relative;
+    background: #f8f8f8;
+    overflow: hidden;
+    margin: 40px 0;
+  }
+
+  .draggable-photo {
+    position: absolute;
+    cursor: move;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease;
+    background: white;
+    padding: 10px;
+    user-select: none;
+  }
+
+  .draggable-photo:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    z-index: 1000;
+  }
+
+  .draggable-photo img {
+    display: block;
+    max-width: 300px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .draggable-photo .caption {
+    padding: 10px 5px 5px;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Random rotations and positions handled by JavaScript */
+
+  /* Text blocks that can be positioned */
+  .draggable-text {
+    position: absolute;
+    max-width: 250px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    cursor: move;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .draggable-text:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  /* Controls */
+  .canvas-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 2000;
+  }
+
+  .canvas-controls button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  .canvas-controls button:hover {
+    background: #f5f5f5;
+  }
+
+  @media (max-width: 768px) {
+    .photo-canvas {
+      min-height: 60vh;
+    }
+    
+    .draggable-photo img {
+      max-width: 200px;
+      max-height: 250px;
+    }
+    
+    .canvas-controls {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 20px auto;
+      max-width: 200px;
+    }
+  }
+</style>
+
+<!-- Include Interact.js for drag functionality -->
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+<div class="destination-container">
+  <div class="destination-header">
+    <h1>{{ page.destination }}</h1>
+    {% if page.date_visited %}
+      <div class="date">{{ page.date_visited }}</div>
+    {% endif %}
+    {% if page.description %}
+      <div class="description">{{ page.description }}</div>
+    {% endif %}
+  </div>
+
+  <div class="photo-canvas" id="photoCanvas">
+    {{ content }}
+  </div>
+
+  <div class="canvas-controls">
+    <button onclick="shufflePhotos()">Shuffle Photos</button>
+    <button onclick="resetPositions()">Reset Layout</button>
+    <button onclick="randomRotations()">Random Rotations</button>
+  </div>
+</div>
+
+<script>
+  // Make elements draggable
+  interact('.draggable-photo, .draggable-text')
+    .draggable({
+      inertia: true,
+      modifiers: [
+        interact.modifiers.restrictRect({
+          restriction: 'parent',
+          endOnly: true
+        })
+      ],
+      autoScroll: true,
+      listeners: {
+        move: dragMoveListener,
+        end: function (event) {
+          // Add a slight rotation on drop for natural feel
+          const randomRotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
+          const x = parseFloat(event.target.getAttribute('data-x')) || 0;
+          const y = parseFloat(event.target.getAttribute('data-y')) || 0;
+          event.target.style.transform = `translate(${x}px, ${y}px) rotate(${randomRotation}deg)`;
+          event.target.setAttribute('data-rotation', randomRotation);
+        }
+      }
+    });
+
+  function dragMoveListener(event) {
+    var target = event.target;
+    var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+    var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+    // Preserve existing rotation if any
+    var currentRotation = target.getAttribute('data-rotation') || '0';
+    target.style.transform = 'translate(' + x + 'px, ' + y + 'px) rotate(' + currentRotation + 'deg)';
+    target.setAttribute('data-x', x);
+    target.setAttribute('data-y', y);
+  }
+
+  // Utility functions
+  function shufflePhotos() {
+    const canvas = document.getElementById('photoCanvas');
+    const elements = canvas.querySelectorAll('.draggable-photo, .draggable-text');
+    
+    elements.forEach(element => {
+      const maxX = canvas.clientWidth - element.clientWidth;
+      const maxY = canvas.clientHeight - element.clientHeight;
+      
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+      const randomRotation = (Math.random() - 0.5) * 20;
+      
+      element.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
+      element.setAttribute('data-x', randomX);
+      element.setAttribute('data-y', randomY);
+      element.setAttribute('data-rotation', randomRotation);
+    });
+  }
+
+  function resetPositions() {
+    const elements = document.querySelectorAll('.draggable-photo, .draggable-text');
+    elements.forEach((element, index) => {
+      element.style.transform = `translate(${index * 20}px, ${index * 20}px) rotate(0deg)`;
+      element.setAttribute('data-x', index * 20);
+      element.setAttribute('data-y', index * 20);
+      element.setAttribute('data-rotation', 0);
+    });
+  }
+
+  function randomRotations() {
+    const elements = document.querySelectorAll('.draggable-photo, .draggable-text');
+    elements.forEach(element => {
+      const x = parseFloat(element.getAttribute('data-x')) || 0;
+      const y = parseFloat(element.getAttribute('data-y')) || 0;
+      const rotation = (Math.random() - 0.5) * 30; // -15 to 15 degrees
+      
+      element.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
+      element.setAttribute('data-rotation', rotation);
+    });
+  }
+
+  // Auto-position elements on load
+  window.addEventListener('load', function() {
+    const canvas = document.getElementById('photoCanvas');
+    const elements = canvas.querySelectorAll('.draggable-photo, .draggable-text');
+    
+    elements.forEach((element, index) => {
+      // Create initial scattered layout
+      const angle = (index * 137.5) * (Math.PI / 180); // Golden angle for nice distribution
+      const radius = 100 + (index * 50);
+      const centerX = canvas.clientWidth / 2;
+      const centerY = canvas.clientHeight / 2;
+      
+      const x = centerX + Math.cos(angle) * radius - element.clientWidth / 2;
+      const y = centerY + Math.sin(angle) * radius - element.clientHeight / 2;
+      
+      // Set initial random rotation
+      const initialRotation = (Math.random() - 0.5) * 10; // -5 to 5 degrees
+      
+      element.style.transform = `translate(${Math.max(0, x)}px, ${Math.max(0, y)}px) rotate(${initialRotation}deg)`;
+      element.setAttribute('data-x', Math.max(0, x));
+      element.setAttribute('data-y', Math.max(0, y));
+      element.setAttribute('data-rotation', initialRotation);
+    });
+  });
+</script>
