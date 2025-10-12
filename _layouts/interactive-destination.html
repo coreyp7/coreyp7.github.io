@@ -183,12 +183,14 @@ layout: default
     {{ content }}
   </div>
 
+  <!--
   <div class="canvas-controls">
     <button onclick="shufflePhotos()">Shuffle Photos</button>
     <button onclick="resetPositions()">Reset Layout</button>
     <button onclick="randomRotations()">Random Rotations</button>
   </div>
 </div>
+-->
 
 <script>
   // Make elements draggable
@@ -206,11 +208,11 @@ layout: default
         move: dragMoveListener,
         end: function (event) {
           // Add a slight rotation on drop for natural feel
-          const randomRotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
-          const x = parseFloat(event.target.getAttribute('data-x')) || 0;
-          const y = parseFloat(event.target.getAttribute('data-y')) || 0;
-          event.target.style.transform = `translate(${x}px, ${y}px) rotate(${randomRotation}deg)`;
-          event.target.setAttribute('data-rotation', randomRotation);
+          //const randomRotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
+          //const x = parseFloat(event.target.getAttribute('data-x')) || 0;
+          //const y = parseFloat(event.target.getAttribute('data-y')) || 0;
+          //event.target.style.transform = `translate(${x}px, ${y}px)`;
+          //event.target.setAttribute('data-rotation', randomRotation);
         }
       }
     });
@@ -227,49 +229,8 @@ layout: default
     target.setAttribute('data-y', y);
   }
 
-  // Utility functions
-  function shufflePhotos() {
-    const canvas = document.getElementById('photoCanvas');
-    const elements = canvas.querySelectorAll('.draggable-photo, .draggable-text');
-    
-    elements.forEach(element => {
-      const maxX = window.innerWidth - element.clientWidth;
-      const maxY = window.innerHeight - element.clientHeight;
-      
-      const randomX = Math.random() * maxX;
-      const randomY = Math.random() * maxY;
-      const randomRotation = (Math.random() - 0.5) * 20;
-      
-      element.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotation}deg)`;
-      element.setAttribute('data-x', randomX);
-      element.setAttribute('data-y', randomY);
-      element.setAttribute('data-rotation', randomRotation);
-    });
-  }
-
-  function resetPositions() {
-    const elements = document.querySelectorAll('.draggable-photo, .draggable-text');
-    elements.forEach((element, index) => {
-      element.style.transform = `translate(${index * 20}px, ${index * 20}px) rotate(0deg)`;
-      element.setAttribute('data-x', index * 20);
-      element.setAttribute('data-y', index * 20);
-      element.setAttribute('data-rotation', 0);
-    });
-  }
-
-  function randomRotations() {
-    const elements = document.querySelectorAll('.draggable-photo, .draggable-text');
-    elements.forEach(element => {
-      const x = parseFloat(element.getAttribute('data-x')) || 0;
-      const y = parseFloat(element.getAttribute('data-y')) || 0;
-      const rotation = (Math.random() - 0.5) * 30; // -15 to 15 degrees
-      
-      element.style.transform = `translate(${x}px, ${y}px) rotate(${rotation}deg)`;
-      element.setAttribute('data-rotation', rotation);
-    });
-  }
-
   // Auto-position elements on load
+  /*
   window.addEventListener('load', function() {
     const canvas = document.getElementById('photoCanvas');
     const elements = canvas.querySelectorAll('.draggable-photo, .draggable-text');
@@ -289,12 +250,14 @@ layout: default
       const boundedY = Math.max(0, Math.min(y, window.innerHeight - element.clientHeight));
       
       // Set initial random rotation
-      const initialRotation = (Math.random() - 0.5) * 10; // -5 to 5 degrees
+      //const initialRotation = (Math.random() - 0.5) * 10; // -5 to 5 degrees
       
-      element.style.transform = `translate(${boundedX}px, ${boundedY}px) rotate(${initialRotation}deg)`;
+      element.style.transform = `translate(${boundedX}px, ${boundedY}px)`;
+      //element.style.transform = `translate(${boundedX}px, ${boundedY}px) rotate(${initialRotation}deg)`;
       element.setAttribute('data-x', boundedX);
       element.setAttribute('data-y', boundedY);
-      element.setAttribute('data-rotation', initialRotation);
+      //element.setAttribute('data-rotation', initialRotation);
     });
   });
+  */
 </script>
