@@ -4,9 +4,14 @@ title: "Japan"
 date: 2024-10-01
 category: travel
 destination: "Japan"  
-date_visited: "October - November 2024"
 photo_dir_name: "japan"
 ---
 
+<!-- 
+All the divs are generated in interactive-destination.js file.
+It gets the list of photos (and their default positions when loaded)
+from the photo-mappings file (using the photo_dir_name as the key) and 
+adds them as elements to this document.
 
-Testing having text here
+Anything below will be specific to this page (text, background image, etc.)
+-->

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         photoDiv.setAttribute('data-rotation', pos.rotation);
         
         const img = document.createElement('img');
-        img.src = `/assets/${photoDir}/${filename}`;
+        img.src = `/assets/img/travel/${photoDir}/${filename}`;
         img.alt = filename;
         
         photoDiv.appendChild(img);
