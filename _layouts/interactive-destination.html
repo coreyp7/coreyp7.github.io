@@ -207,6 +207,9 @@ layout: default
 <!-- Include Interact.js for drag functionality -->
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
+<!-- Include photo mappings -->
+<script src="{{ '/assets/js/photo-mappings.js' | relative_url }}"></script>
+
 <!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
   <div class="loading-spinner"></div>
@@ -240,112 +243,12 @@ layout: default
 -->
 
 <script>
-  // Wait for all images to load before hiding loading screen
-  window.addEventListener('load', function() {
-    const canvas = document.getElementById('photoCanvas');
-    const images = canvas.querySelectorAll('img');
-    const loadingScreen = document.getElementById('loadingScreen');
-    
-    if (images.length === 0) {
-      // No images, hide loading screen immediately
-      hideLoadingScreen();
-      return;
-    }
-    
-    let loadedCount = 0;
-    const totalImages = images.length;
-    
-    function checkAllLoaded() {
-      loadedCount++;
-      if (loadedCount === totalImages) {
-        hideLoadingScreen();
-      }
-    }
-    
-    function hideLoadingScreen() {
-      setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        setTimeout(() => {
-          loadingScreen.style.display = 'none';
-        }, 500); // Match transition duration
-      }, 200); // Small delay for better UX
-    }
-    
-    images.forEach(img => {
-      if (img.complete) {
-        checkAllLoaded();
-      } else {
-        img.addEventListener('load', checkAllLoaded);
-        img.addEventListener('error', checkAllLoaded); // Count errors as "loaded" to prevent hanging
-      }
-    });
-  });
+  // Set up page "front matter" data for the external script
+  const pageFrontMatter = {
+    photo_dir_name: "{{ page.photo_dir_name | escape }}"
+  };
 
-  // Make elements draggable
-  interact('.draggable-photo, .draggable-text')
-    .draggable({
-      inertia: true,
-      modifiers: [
-        interact.modifiers.restrictRect({
-          restriction: { top: 0, left: 0, bottom: window.innerHeight, right: window.innerWidth },
-          endOnly: true
-        })
-      ],
-      autoScroll: true,
-      listeners: {
-        move: dragMoveListener,
-        end: function (event) {
-          // Add a slight rotation on drop for natural feel
-          //const randomRotation = (Math.random() - 0.5) * 6; // -3 to 3 degrees
-          //const x = parseFloat(event.target.getAttribute('data-x')) || 0;
-          //const y = parseFloat(event.target.getAttribute('data-y')) || 0;
-          //event.target.style.transform = `translate(${x}px, ${y}px)`;
-          //event.target.setAttribute('data-rotation', randomRotation);
-        }
-      }
-    });
-
-  function dragMoveListener(event) {
-    var target = event.target;
-    var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
-    var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-    // Preserve existing rotation if any
-    var currentRotation = target.getAttribute('data-rotation') || '0';
-    target.style.transform = 'translate(' + x + 'px, ' + y + 'px) rotate(' + currentRotation + 'deg)';
-    target.setAttribute('data-x', x);
-    target.setAttribute('data-y', y);
-  }
-
-  // Auto-position elements on load
-  /*
-  window.addEventListener('load', function() {
-    const canvas = document.getElementById('photoCanvas');
-    const elements = canvas.querySelectorAll('.draggable-photo, .draggable-text');
-    
-    elements.forEach((element, index) => {
-      // Create initial scattered layout using full viewport
-      const angle = (index * 137.5) * (Math.PI / 180); // Golden angle for nice distribution
-      const radius = 100 + (index * 50);
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      
-      const x = centerX + Math.cos(angle) * radius - element.clientWidth / 2;
-      const y = centerY + Math.sin(angle) * radius - element.clientHeight / 2;
-      
-      // Keep elements within viewport bounds
-      const boundedX = Math.max(0, Math.min(x, window.innerWidth - element.clientWidth));
-      const boundedY = Math.max(0, Math.min(y, window.innerHeight - element.clientHeight));
-      
-      // Set initial random rotation
-      //const initialRotation = (Math.random() - 0.5) * 10; // -5 to 5 degrees
-      
-      element.style.transform = `translate(${boundedX}px, ${boundedY}px)`;
-      //element.style.transform = `translate(${boundedX}px, ${boundedY}px) rotate(${initialRotation}deg)`;
-      element.setAttribute('data-x', boundedX);
-      element.setAttribute('data-y', boundedY);
-      //element.setAttribute('data-rotation', initialRotation);
-    });
-  });
-  */
+  // Make it globally accessible
+  window.pageFrontMatter = pageFrontMatter;
 </script>
+<script src="{{ '/assets/js/interactive-destination.js' | relative_url }}"></script>
