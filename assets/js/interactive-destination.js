@@ -6,6 +6,34 @@
 // doesn't work.
 document.addEventListener("DOMContentLoaded", function() {
   
+  // First, dynamically create photo elements based on photo-mappings.js
+  if (typeof window.photoMappings !== 'undefined' && window.pageFrontMatter) {
+    const photoDir = window.pageFrontMatter.photo_dir_name;
+    const mappings = window.photoMappings[photoDir];
+    
+    if (mappings) {
+      const canvas = document.getElementById('photoCanvas');
+      
+      // Create photo elements for each image in the mappings
+      Object.keys(mappings).forEach(filename => {
+        let pos = mappings[filename];
+        const photoDiv = document.createElement('div');
+        photoDiv.className = 'draggable-photo';
+        photoDiv.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`;
+        photoDiv.setAttribute('data-x', pos.x);
+        photoDiv.setAttribute('data-y', pos.y);
+        photoDiv.setAttribute('data-rotation', pos.rotation);
+        
+        const img = document.createElement('img');
+        img.src = `/assets/${photoDir}/${filename}`;
+        img.alt = filename;
+        
+        photoDiv.appendChild(img);
+        canvas.appendChild(photoDiv);
+      });
+    }
+  }
+  
   if (typeof window.pageFrontMatter !== 'undefined') {
     console.log("pageFrontMatter found:", window.pageFrontMatter);
     console.log("Photo dir:", window.pageFrontMatter.photo_dir_name);
