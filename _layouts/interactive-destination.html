@@ -217,31 +217,9 @@ layout: default
 </div>
 
 <div class="destination-container">
-    <!--
-  <div class="destination-header">
-    <h1>{{ page.destination }}</h1>
-    {% if page.date_visited %}
-      <div class="date">{{ page.date_visited }}</div>
-    {% endif %}
-    {% if page.description %}
-      <div class="description">{{ page.description }}</div>
-    {% endif %}
-  </div>
--->
-
   <div class="photo-canvas" id="photoCanvas">
     {{ content }}
   </div>
-
-  <!--
-  <div class="canvas-controls">
-    <button onclick="shufflePhotos()">Shuffle Photos</button>
-    <button onclick="resetPositions()">Reset Layout</button>
-    <button onclick="randomRotations()">Random Rotations</button>
-  </div>
-</div>
--->
-
 <script>
   // Set up page "front matter" data for the external script
   const pageFrontMatter = {

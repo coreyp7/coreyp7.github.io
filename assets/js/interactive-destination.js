@@ -20,12 +20,19 @@ function createPhotoElements() {
   // (This is determined by the 'photoDir' from the front matter in the markdown file)
   Object.keys(mappings).forEach(filename => {
     let pos = mappings[filename];
+    
+    // Convert percentage to pixels for pos
+    const canvas = document.getElementById('photoCanvas');
+    const xPosPx = (pos.x / 100) * canvas.offsetWidth;
+    const yPosPx = (pos.y / 100) * canvas.offsetHeight;
+    
     const photoDiv = document.createElement('div');
     photoDiv.className = 'draggable-photo';
-    photoDiv.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${pos.rotation}deg)`;
-    photoDiv.setAttribute('data-x', pos.x);
-    photoDiv.setAttribute('data-y', pos.y);
+    photoDiv.style.transform = `translate(${xPosPx}px, ${yPosPx}px) rotate(${pos.rotation}deg)`;
+    photoDiv.setAttribute('data-x', xPosPx);
+    photoDiv.setAttribute('data-y', yPosPx);
     photoDiv.setAttribute('data-rotation', pos.rotation);
+  
     
     const img = document.createElement('img');
     img.src = `/assets/img/travel/${photoDir}/${filename}`;
