@@ -12,7 +12,7 @@ title: Notes
         {% for post in site.posts %}
         {% if post.category == "blog" %}
         <li class="post_list">
-            ({{ post.date | date: "%m/%d/%Y" }}) ~
+            {{ post.date | date: "%m/%d/%Y" }} ~
             <a href="{{ post.url }}">{{ post.title }}</a>
             <!--<p style="padding-left: 111px;">{{ post.description }}</p>-->
         </li>

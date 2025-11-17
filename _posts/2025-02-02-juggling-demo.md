@@ -4,6 +4,7 @@ category: project
 description: A little demo I made for a juggling game using a controller.
 github-link: https://github.com/coreyp7/juggling-demo
 youtube-link: https://www.youtube.com/embed/AlNsb7234oE
+language: C++
 ---
 
 <p>

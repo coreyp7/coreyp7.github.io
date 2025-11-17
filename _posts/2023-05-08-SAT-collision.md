@@ -4,6 +4,7 @@ category: project
 description: A small demo of an implementation of SAT collision of any convex polygons.
 youtube-link: https://www.youtube.com/embed/TX0AjeiljTw
 github-link: https://github.com/coreyp7/SAT
+language: C++
 ---
 
 I wanted to implement more sophistocated collision detection after just resorting to AABB stuff in previous projects up until this point. SAT is a common one to learn for convex polygons, and is very visually satisfying to get working.

@@ -5,6 +5,7 @@ description: QuadTree implementation I created for use in future projects, speci
 image_name: quadtree.gif
 github-link: https://github.com/coreyp7/quadtree-demo
 youtube-link: https://www.youtube.com/embed/rHf6aKyx8l8
+language: C++
 ---
 
 My first implementation of a QuadTree. Wanted to learn about spatial data structures for use in game development, so I created a demo of large amounts of collisions occurring utilizing this data structure.

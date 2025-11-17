@@ -5,6 +5,7 @@ description: Everybody makes Tetris; this one's mine.
 image_name: tetris_preview.png
 github-link: https://github.com/coreyp7/sirtet
 youtube-link: https://www.youtube.com/embed/fWdjqzIpYWk
+language: C++
 ---
 
 It feels like creating your own tetris is a sort of rite of passage as a game developer, and I thought it sounded like a fun project. I honestly didn't have a specific goal when developing this in a week, but ended up learning more about object oriented C++ stuff (polymorphism through pointers, abstraction). More broadly, I also learned more about source file organization (*because this source code is messy*) and game state-machines (for handling different modes/menus in games).

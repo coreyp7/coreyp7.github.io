@@ -3,6 +3,7 @@ layout: post
 category: project
 description: Open address hashtable in C (for my use in another project)
 github-link: https://github.com/coreyp7/hashtable
+language: C++
 ---
 
 An open address hashtable in C. Wrote it to use for a malloc / garbage collector I was making for a while.
